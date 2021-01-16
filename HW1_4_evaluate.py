@@ -112,12 +112,6 @@ def classifier4(A, B, test_img):
     """
     return 0
 
-def general_classifier(A,B,test_img):
-    """
-    YOUR [EXTRA CREDIT] CODE HERE
-    """
-    return 0
-
 for i in range(4):
     correct_count = 0
     for j in range(100):
