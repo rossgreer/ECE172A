@@ -83,6 +83,6 @@ while(True):
     displayRoom(loc, obj, vSize, hSize);
     
     # Check if the South side of the image has been reached
-    if loc[-1][0] == hSize-1:
+    if loc[-1][0] == vSize-1:
         print("Success!")
         break
