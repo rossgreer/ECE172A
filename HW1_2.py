@@ -67,7 +67,7 @@ displayRoom(loc, obj, vSize, hSize)
 
 while(True):
     # Make the robot move a certain direction
-    nextStep = loc[-1] + np.array([1, 0]);
+    nextStep = loc[-1] + np.array([1, 0])
     
     # If there is an object to the South, move a different direction
     # START
@@ -80,7 +80,7 @@ while(True):
         loc = np.vstack([loc, nextStep])
     
     # Show new position
-    displayRoom(loc, obj, vSize, hSize);
+    displayRoom(loc, obj, vSize, hSize)
     
     # Check if the South side of the image has been reached
     if loc[-1][0] == vSize-1:
