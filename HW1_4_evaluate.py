@@ -127,7 +127,7 @@ for i in range(4):
         else: 
             block0,block1,test_img,label = generator4()
             output = classifier4(block0,block1,test_img)
-        if output == label
+        if output == label:
             correct_count += 1
     accuracy = correct_count / 100
-    print('The accuracy of question %d is %f\n', i+1, accuracy)
+    print('The accuracy of question %d is %f\n'%(i+1,accuracy))
