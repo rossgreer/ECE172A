@@ -18,6 +18,7 @@ def f(x, y):
 x = np.linspace(0, 100, 100)
 y = np.linspace(0, 100, 100)
 z = f(x[:,None], y[None,:])
+z = np.rot90(np.fliplr(z))
 
 fig = plt.figure()
 ax = plt.axes(projection='3d')
