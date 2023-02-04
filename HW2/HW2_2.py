@@ -51,7 +51,7 @@ plt.title('Press \'q\' button to begin.')
 plt.show()
 
 
-def get_unexplored_areas(explore_map, unmapped_value):
+def find_unexplored_areas(explore_map, unmapped_value):
     '''
     Write this function so that unexplored_areas is a Nx2 matrix
     where N is the number of locations the bots have not explored, and each
@@ -63,7 +63,7 @@ def get_unexplored_areas(explore_map, unmapped_value):
     '''
     return 0
 
-def get_new_destination(current_position, unexplored_areas):
+def get_new_dest(current_position, unexplored_areas):
     '''
     Write this function so that it will pick the closest unexplored area
     as the new destination dest. We will keep this function simple by
@@ -84,7 +84,7 @@ def update_explore_map(dest, route, explore_map, planned, unmapped):
 
     return explore_map
 
-def update_position(curPos, route, dest, explore_map, mapped):
+def update_pos(curPos, route, dest, explore_map, mapped):
     '''
     Write this function so that:
     1) update curPos 1 step closer to the destination using route
@@ -175,7 +175,7 @@ for itr in range(max_itr):
                     
             # get the locations of all areas that are labeled as unmapped 
             # TODO: write this function above.
-            unexplored_areas = get_unexplored_areas(explore_map, unmapped)
+            unexplored_areas = find_unexplored_areas(explore_map, unmapped)
             
             # if there are no more unexplored areas, then this bot stops moving
             if len(unexplored_areas) == 0:
@@ -185,7 +185,7 @@ for itr in range(max_itr):
                 continue
             
             # calculate bot's new destination (TODO: write this function above)
-            dest = get_new_destination(curPos, unexplored_areas)
+            dest = get_new_dest(curPos, unexplored_areas)
             
             # calculates bot's route to the destination (you do not need to worry about this function)
             if a_star(explore_map, curPos, dest).size:
@@ -198,7 +198,7 @@ for itr in range(max_itr):
             explore_map = update_explore_map(dest, route, explore_map, planned, unmapped)
 
         # Using the calculated route, move the bot 1 step towards the destination bot's destination (TODO: write this function above)
-        curPos, route, dest, explore_map = update_position(curPos, route, dest, explore_map, mapped)
+        curPos, route, dest, explore_map = update_pos(curPos, route, dest, explore_map, mapped)
         
         # update bot's curr position, past position, destination, and map
         update_bot_info(curPos, dest, route, explore_map, botNum)
