@@ -98,6 +98,7 @@ def update_pos(curPos, route, dest, explore_map, mapped):
 
     return curPos, route, dest, explore_map
 
+
 def update_bot_info(curPos, dest, route, explore_map, botNum):
     bots[botNum]['current_position'] = curPos
     bots[botNum]['destination'] = dest
