@@ -216,7 +216,7 @@ for itr in range(max_itr):
 
     plt.show(block=False)
     plt.pause(.25)
-    ax.patches = []
+    ax.patches.clear()
     mapped_count = sum(sum(np.array(explore_map) == mapped))
     wall_count = sum(sum(np.array(explore_map) == wall))
     explore_size = explore_map.size
